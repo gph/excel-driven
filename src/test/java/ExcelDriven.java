@@ -46,13 +46,13 @@ public class ExcelDriven {
 	@DataProvider(name = "books")
 	public Object[][] dataProvider() throws IOException {
 		DataDriven data = new DataDriven();
-		ArrayList<Map<String, Object>> books = data.getData("test", "testcases");
-		
-		return new Object[][] { 
-			{ books.get(0) }, 
-			{ books.get(1) },
-			{ books.get(2) }
-			
-		};
+		ArrayList<Map<String, Object>> booksList = data.getData("test", "testcases");
+		Object[][] books = new Object[booksList.size()][1];
+		int index = 0;
+		for (Iterator iterator = booksList.iterator(); iterator.hasNext();) {
+			Map<String, Object> book = (Map<String, Object>) iterator.next();
+			books[index++] = new Object[] {book};
+		}
+		return books;
 	}
 }
