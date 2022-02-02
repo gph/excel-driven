@@ -1,28 +1,28 @@
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.apache.poi.ss.usermodel.CellType;
 
-public class dataDriven {
+public class DataDriven {
 	public static void main(String[] args) throws IOException {
-		dataDriven d = new dataDriven();
-		d.getData("test", "purchase").forEach((cell) -> {
+		DataDriven d = new DataDriven();
+		d.getData("test", "testcases", "book1").forEach((cell) -> {
 			System.out.println(cell);
 		});
 
-		ArrayList data = d.getData("test", "purchase");
-		System.out.println(data.get(0));
+		// Example 2
+		//ArrayList data = d.getData("test", "case1");
+		//System.out.println(data.get(0));
 		
 	}
 	
-	public ArrayList<String> getData(String sheetName, String columnName) throws IOException {
+	public ArrayList<String> getData(String sheetName, String columnName, String cellName) throws IOException {
 		FileInputStream file = new FileInputStream("restapicourse.xlsx");
 		XSSFWorkbook workbook = new XSSFWorkbook(file);
 		
@@ -47,7 +47,7 @@ public class dataDriven {
 					{
 						Cell value = cell.next();
 						
-						if(value.getStringCellValue().equalsIgnoreCase("testcases")) // search some text in a cell
+						if(value.getStringCellValue().equalsIgnoreCase(columnName)) // search some text in a cell
 						{
 							column = k;
 						}
@@ -58,7 +58,7 @@ public class dataDriven {
 					while(rows.hasNext()) 
 					{
 						Row r = rows.next();
-						if(r.getCell(column).getStringCellValue().toString().equalsIgnoreCase(columnName))
+						if(r.getCell(column).getStringCellValue().toString().equalsIgnoreCase(cellName))
 						{
 							Iterator<Cell> cv = r.cellIterator();
 							while(cv.hasNext())

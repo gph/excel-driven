@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-02-01T21:13:20 BRT" name="Default suite" finished-at="2022-02-01T21:13:23 BRT" duration-ms="2891">
+  <suite started-at="2022-02-01T22:11:59 BRT" name="Default suite" finished-at="2022-02-01T22:12:03 BRT" duration-ms="3332">
     <groups>
     </groups>
-    <test started-at="2022-02-01T21:13:20 BRT" name="Default test" finished-at="2022-02-01T21:13:23 BRT" duration-ms="2891">
-      <class name="excelDriven">
-        <test-method signature="addBook()[pri:0, instance:excelDriven@7e5afaa6]" started-at="2022-02-01T21:13:20 BRT" name="addBook" finished-at="2022-02-01T21:13:23 BRT" duration-ms="2862" status="PASS">
+    <test started-at="2022-02-01T22:11:59 BRT" name="Default test" finished-at="2022-02-01T22:12:03 BRT" duration-ms="3332">
+      <class name="ExcelDriven">
+        <test-method signature="addBook()[pri:0, instance:ExcelDriven@63a12c68]" started-at="2022-02-01T22:11:59 BRT" name="addBook" finished-at="2022-02-01T22:12:03 BRT" duration-ms="3300" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addBook -->
-      </class> <!-- excelDriven -->
+      </class> <!-- ExcelDriven -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
