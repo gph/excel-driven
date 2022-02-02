@@ -23,10 +23,6 @@ public class ExcelDriven {
 				.post("/Library/Addbook.php").then().log().all().assertThat().statusCode(200).extract().response();
 
 		JsonPath js = new JsonPath(res.asString());
-
-		System.out.println("ID: " + js.get("ID"));
-
-		// deleteBook(js.get("ID"));
 	}
 
 	public void deleteBook(String id) {
